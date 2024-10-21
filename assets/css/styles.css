@@ -111,3 +111,9 @@ z-index: -1;
     flex-direction: column;
     justify-content: space-between;
 }
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        margin-left: 0; /* Ajustez cette valeur selon vos besoins */
+    }
+}

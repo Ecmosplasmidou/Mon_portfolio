@@ -19,13 +19,9 @@
     <div class="wave-container-other">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand text-white" href="home.php">
+                <a class="navbar-brand text-white" href="home.php">
                     <img src="images_stick/ecmosdev-logo.png" alt="Logo du site" class="img-fluid" style="max-height: 50px;">
                 </a>
-                <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNav" style="margin-right:210px ;">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
