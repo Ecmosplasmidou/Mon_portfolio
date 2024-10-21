@@ -1,7 +1,5 @@
 .env
 create_user.php
-add_content.sql
+
 send_contact.php
-login.php
-logout.php
-admin.php
+
