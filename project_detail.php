@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
     if ($project) {
         // Décoder les URLs des photos stockées dans la colonne carousel_photos
         $carousel_photos = json_decode($project['carousel_photos'], true);
-        $carousel_photos_smartphone = json_decode($project['carousel_photos_smartphone'], true);
+        
 
         // Vérifiez si $carousel_photos est un tableau et contient les indices nécessaires
         $photo1 = isset($carousel_photos[0]) ? htmlspecialchars($carousel_photos[0]) : '';
@@ -38,30 +38,22 @@ if (isset($_GET['id'])) {
             </div>
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
-                    <!-- Image 1 (large screen) -->
                     <div class='carousel-item active d-none d-md-block'>
                         <img src='$photo1' class='d-block w-100' alt='Photo 1'>
                     </div>
-                    <!-- Image 4 (small screen) -->
+                    <div class='carousel-item active d-none d-md-block'>
+                        <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                    </div>
+                    <div class='carousel-item active d-none d-md-block'>
+                        <img src='$photo3' class='d-block w-100' alt='Photo 3'>
+                    </div>
                     <div class='carousel-item active d-block d-md-none'>
                         <img src='$photo4' class='d-block w-100' alt='Photo 4'>
                     </div>
-
-                    <!-- Image 2 (large screen) -->
-                    <div class='carousel-item d-none d-md-block'>
-                        <img src='$photo2' class='d-block w-100' alt='Photo 2'>
-                    </div>
-                    <!-- Image 5 (small screen) -->
-                    <div class='carousel-item d-block d-md-none'>
+                    <div class='carousel-item active d-block d-md-none'>
                         <img src='$photo5' class='d-block w-100' alt='Photo 5'>
                     </div>
-
-                    <!-- Image 3 (large screen) -->
-                    <div class='carousel-item d-none d-md-block'>
-                        <img src='$photo3' class='d-block w-100' alt='Photo 3'>
-                    </div>
-                    <!-- Image 6 (small screen) -->
-                    <div class='carousel-item d-block d-md-none'>
+                    <div class='carousel-item active d-block d-md-none'>
                         <img src='$photo6' class='d-block w-100' alt='Photo 6'>
                     </div>
                 </div>
@@ -102,3 +94,45 @@ if (isset($_GET['id'])) {
 
 include 'footer.php';
 ?>
+
+
+
+
+<div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
+                <div class='carousel-inner'>
+                    <!-- Image 1 (large screen) -->
+                    <div class='carousel-item active d-none d-md-block'>
+                        <img src='$photo1' class='d-block w-100' alt='Photo 1'>
+                    </div>
+                    <!-- Image 4 (small screen) -->
+                    <div class='carousel-item active d-block d-md-none'>
+                        <img src='$photo4' class='d-block w-100' alt='Photo 4'>
+                    </div>
+
+                    <!-- Image 2 (large screen) -->
+                    <div class='carousel-item d-none d-md-block'>
+                        <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                    </div>
+                    <!-- Image 5 (small screen) -->
+                    <div class='carousel-item d-block d-md-none'>
+                        <img src='$photo5' class='d-block w-100' alt='Photo 5'>
+                    </div>
+
+                    <!-- Image 3 (large screen) -->
+                    <div class='carousel-item d-none d-md-block'>
+                        <img src='$photo3' class='d-block w-100' alt='Photo 3'>
+                    </div>
+                    <!-- Image 6 (small screen) -->
+                    <div class='carousel-item d-block d-md-none'>
+                        <img src='$photo6' class='d-block w-100' alt='Photo 6'>
+                    </div>
+                </div>
+                <a class='carousel-control-prev' href='#projectCarousel' role='button' data-slide='prev'>
+                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                    <span class='sr-only'>Previous</span>
+                </a>
+                <a class='carousel-control-next' href='#projectCarousel' role='button' data-slide='next'>
+                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                    <span class='sr-only'>Next</span>
+                </a>
+            </div>
