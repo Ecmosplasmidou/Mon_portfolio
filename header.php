@@ -22,7 +22,7 @@
                 <a class="navbar-brand navbar-brand-1 text-white" href="home.php">
                     <img src="images_stick/ecmosdev-logo.png" alt="Logo du site" class="img-fluid" style="max-height: 50px;">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav" style="margin-right:210px ;">
