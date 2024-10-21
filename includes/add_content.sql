@@ -16,17 +16,19 @@ BEGIN
         project_date date DEFAULT NULL,
         stack varchar(255) DEFAULT NULL,
         carousel_photos jsonb DEFAULT NULL,
-        created_at timestamp NOT NULL DEFAULT current_timestamp,
+        carousel_photos_smartphone jsonb DEFAULT NULL,
+        created_at timestamp NOT NULL DEFAULT current_timestamp(),
         instagram varchar(255) DEFAULT NULL,
         cms varchar(255) DEFAULT NULL
     );
 END $$;
 
 -- -- Insertion des données dans la table projects
-INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, created_at, instagram, cms) VALUES 
-('Olympic Ticket Hub', '<p><strong>&quot;Olympic Ticket Hub&quot;</strong>...</p>', 'images/athlete-feminine.jpg', 'https://jo-ticketing-site-e53a4a320f9f.herokuapp.com/', 'https://github.com/Ecmosplasmidou/site_jo_finale.git', '2024-10-01', 'Python/Django/JS/Bootstrap', '["images/jo_image_1.png", "images/jo_image_2.png", "images/jo_image_3.png"]', '2024-10-20 18:17:15', '', ''),
-('Trendy-Paris', '<p><strong>Dont be original, be unique!</strong></p>', 'images/trendy-paris.png', '', '', '2021-10-13', 'HTML/CSS/JavaScript', '["images/TP.jpg", "images/TP_1.jpg", "images/TP_2.jpg"]', '2024-10-21 09:43:16', 'https://www.instagram.com/trendypofficiel/', 'SHOPIFY'),
-('Ecmosgotchi', '<p><strong>Come to play with teh ecmosgotchi her:</strong></p>', 'images/ecmosgotchi_acceuil.png', 'https://ecmosgotchi-tamagotchi-by-ecmosdev.netlify.app/', '', '2024-03-13', 'HTML/CSS/JavaScript', '["images/ecmosgotchi.png", "images/ecmosgotchi_2.png", "images/ecmosgotchi_3.png"]', '2024-10-21 11:58:21', '', '');
+INSERT INTO projects VALUES 
+(1, 'Olympic Ticket Hub', '<p><strong>&quot;Olympic Ticket Hub&quot;</strong>...', 'images/athlete-feminine.jpg', 'https://jo-ticketing-site-e53a4a320f9f.herokuapp.com/', 'https://github.com/Ecmosplasmidou/site_jo_finale.git', '2024-10-01', 'Python/Django/JS/Bootstrap', '["images/jo_image_1.png", "images/jo_image_2.png", "images/jo_image_3.png"]','["images/jo_image_smartphone_1.png", "images/jo_image_smartphone_2.png", "images/jo_image_smartphone_3.png"]', '2024-10-20 18:17:15', '', ''),
+(2, 'Trendy-Paris', '<p><strong>Dont be original, be unique!</strong></p>', 'images/trendy-paris.png', '', '', '2021-10-13', 'HTML/CSS/JavaScript', '["images/TP.jpg", "images/TP_1.jpg", "images/TP_2.jpg"]', '2024-10-21 09:43:16', 'https://www.instagram.com/trendypofficiel/', 'SHOPIFY'),
+(3, 'Ecmosgotchi', '<p><strong>Come to play with teh ecmosgotchi her:</strong></p>', 'images/ecmosgotchi_acceuil.png', 'https://ecmosgotchi-tamagotchi-by-ecmosdev.netlify.app/', '', '2024-03-13', 'HTML/CSS/JavaScript', '["images/ecmosgotchi.png", "images/ecmosgotchi_2.png", "images/ecmosgotchi_3.png"]', '["images/ecmosgotchi_smartphone.png", "images/ecmosgotchi_smartphone_1.png", "images/ecmosgotchi_smartphone_2.png"]','["images/jo_image_smartphone_1.png", "images/jo_image_smartphone_2.png", "images/jo_image_smartphone_3.png"]' , '2024-10-21 11:58:21', '', '');
+
 
 -- Vérifiez et créez la table users
 DO $$ 
