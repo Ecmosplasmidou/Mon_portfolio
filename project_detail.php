@@ -38,14 +38,31 @@ if (isset($_GET['id'])) {
             </div>
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
-                    <div class='carousel-item active'>
-                        <img src='$photo1' srcset='$photo4 450w, $photo1 451w' sizes='(max-width: 450px) 100vw, 600px' class='d-block w-100' alt='Photo 1'>
+                    <!-- Image 1 (large screen) -->
+                    <div class='carousel-item active d-none d-md-block'>
+                        <img src='$photo1' class='d-block w-100' alt='Photo 1'>
                     </div>
-                    <div class='carousel-item'>
-                        <img src='$photo2' srcset='$photo5 450w, $photo2 451w' sizes='(max-width: 450px) 100vw, 600px' class='d-block w-100' alt='Photo 2'>
+                    <!-- Image 4 (small screen) -->
+                    <div class='carousel-item active d-block d-md-none'>
+                        <img src='$photo4' class='d-block w-100' alt='Photo 4'>
                     </div>
-                    <div class='carousel-item'>
-                        <img src='$photo3' srcset='$photo6 450w, $photo3 451w' sizes='(max-width: 450px) 100vw, 600px' class='d-block w-100' alt='Photo 3'>
+
+                    <!-- Image 2 (large screen) -->
+                    <div class='carousel-item d-none d-md-block'>
+                        <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                    </div>
+                    <!-- Image 5 (small screen) -->
+                    <div class='carousel-item d-block d-md-none'>
+                        <img src='$photo5' class='d-block w-100' alt='Photo 5'>
+                    </div>
+
+                    <!-- Image 3 (large screen) -->
+                    <div class='carousel-item d-none d-md-block'>
+                        <img src='$photo3' class='d-block w-100' alt='Photo 3'>
+                    </div>
+                    <!-- Image 6 (small screen) -->
+                    <div class='carousel-item d-block d-md-none'>
+                        <img src='$photo6' class='d-block w-100' alt='Photo 6'>
                     </div>
                 </div>
                 <a class='carousel-control-prev' href='#projectCarousel' role='button' data-slide='prev'>
