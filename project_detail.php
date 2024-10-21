@@ -18,9 +18,9 @@ if (isset($_GET['id'])) {
         $photo1 = isset($carousel_photos[0]) ? htmlspecialchars($carousel_photos[0]) : '';
         $photo2 = isset($carousel_photos[1]) ? htmlspecialchars($carousel_photos[1]) : '';
         $photo3 = isset($carousel_photos[2]) ? htmlspecialchars($carousel_photos[2]) : '';
-        $photo4 = isset($carousel_photos_smartphone[0]) ? htmlspecialchars($carousel_photos[0]) : '';
-        $photo5 = isset($carousel_photos_smartphone[1]) ? htmlspecialchars($carousel_photos[1]) : '';
-        $photo6 = isset($carousel_photos_smartphone[2]) ? htmlspecialchars($carousel_photos[2]) : '';
+        $photo4 = isset($carousel_photos_smartphone[0]) ? htmlspecialchars($carousel_photos_smartphone[0]) : '';
+        $photo5 = isset($carousel_photos_smartphone[1]) ? htmlspecialchars($carousel_photos_smartphone[1]) : '';
+        $photo6 = isset($carousel_photos_smartphone[2]) ? htmlspecialchars($carousel_photos_smartphone[2]) : '';
 
         // Affichez les détails du projet
         echo "
