@@ -35,13 +35,13 @@ if (isset($_GET['id'])) {
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
                     <div class='carousel-item active'>
-                        <img src='$photo1' class='d-block w-100' alt='Photo 1'>
+                        <img src='$photo1' srcset='$photo1 600w, $photo1-small 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 1'>
                     </div>
                     <div class='carousel-item'>
-                        <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                        <img src='$photo2' srcset='$photo2 600w, $photo2-small 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 2'>
                     </div>
                     <div class='carousel-item'>
-                        <img src='$photo3' class='d-block w-100' alt='Photo 3'>
+                        <img src='$photo3' srcset='$photo3 600w, $photo3-small 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 3'>
                     </div>
                 </div>
                 <a class='carousel-control-prev' href='#projectCarousel' role='button' data-slide='prev'>

@@ -20,12 +20,13 @@ if (isset($_GET['id'])) {
             $project_date = htmlspecialchars($_POST['project_date']);
             $stack = htmlspecialchars($_POST['stack']);
             $carousel_photos = json_encode([$_POST['photo1'], $_POST['photo2'], $_POST['photo3']]);
+            $carousel_photos_smartphone = json_encode([$_POST['photo4'], $_POST['photo5'], $_POST['photo6']]);
             $instagram = htmlspecialchars($_POST['instagram']);
             $cms = htmlspecialchars($_POST['cms']);
 
             // Préparez et exécutez la requête de mise à jour
-            $updateStmt = $pdo->prepare('UPDATE projects SET title = ?, description = ?, image = ?, lien = ?, github = ?, project_date = ?, stack = ?, carousel_photos = ?, instagram = ?, cms = ? WHERE id = ?');
-            $updateStmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $instagram, $cms, $projectId]);
+            $updateStmt = $pdo->prepare('UPDATE projects SET title = ?, description = ?, image = ?, lien = ?, github = ?, project_date = ?, stack = ?, carousel_photos = ?, carousel_photos_smartphone = ?, instagram = ?, cms = ? WHERE id = ?');
+            $updateStmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms, $projectId]);
 
             // Redirigez vers la page de détails du projet après la mise à jour
             header('Location: project_detail.php?id=' . $projectId);
@@ -37,6 +38,9 @@ if (isset($_GET['id'])) {
         $photo1 = isset($carousel_photos[0]) ? htmlspecialchars($carousel_photos[0]) : '';
         $photo2 = isset($carousel_photos[1]) ? htmlspecialchars($carousel_photos[1]) : '';
         $photo3 = isset($carousel_photos[2]) ? htmlspecialchars($carousel_photos[2]) : '';
+        $photo4 = isset($carousel_photos_smartphone[0]) ? htmlspecialchars($carousel_photos_smartphone[0]) : '';
+        $photo5 = isset($carousel_photos_smartphone[1]) ? htmlspecialchars($carousel_photos_smartphone[1]) : '';
+        $photo6 = isset($carousel_photos_smartphone[2]) ? htmlspecialchars($carousel_photos_smartphone[2]) : '';
 
         echo "
         <div class='wave'></div>
@@ -84,6 +88,18 @@ if (isset($_GET['id'])) {
                         <div class='mb-3'>
                             <label for='photo3' class='form-label text-white'>Photo 3 URL</label>
                             <input type='text' class='form-control' id='photo3' name='photo3' value='" . htmlspecialchars($photo3, ENT_QUOTES, 'UTF-8') . "' required>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='photo4' class='form-label text-white'>Photo smartphone 1 URL</label>
+                            <input type='text' class='form-control' id='photo4' name='photo4' value='" . htmlspecialchars($photo4, ENT_QUOTES, 'UTF-8') . "' required>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='photo5' class='form-label text-white'>Photo smartphone 2 URL</label>
+                            <input type='text' class='form-control' id='photo5' name='photo5' value='" . htmlspecialchars($photo5, ENT_QUOTES, 'UTF-8') . "' required>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='photo6' class='form-label text-white'>Photo smartphone 3 URL</label>
+                            <input type='text' class='form-control' id='photo6' name='photo6' value='" . htmlspecialchars($photo6, ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
                             <label for='instagram' class='form-label text-white'>Instagram</label>

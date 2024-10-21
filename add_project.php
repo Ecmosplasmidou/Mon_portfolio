@@ -12,10 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $project_date = htmlspecialchars($_POST['project_date']);
     $stack = htmlspecialchars($_POST['stack']);
     $carousel_photos = json_encode([$_POST['photo1'], $_POST['photo2'], $_POST['photo3']]);
+    $carousel_photos_smartphone = json_encode([$_POST['photo4'], $_POST['photo5'], $_POST['photo6']]);
 
     // Préparez et exécutez la requête d'insertion
     $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, instagram, cms, project_date, stack, carousel_photos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-    $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $instagram, $cms, $project_date, $stack, $carousel_photos]);
+    $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $instagram, $cms, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone]);
 
     header('Location: admin.php');
     exit;
@@ -83,6 +84,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="mb-3">
             <label for="photo3" class="form-label text-white">Photo 3 URL</label>
             <input type="text" class="form-control" id="photo3" name="photo3">
+        </div>
+        <div class="mb-3">
+            <label for="photo4" class="form-label text-white">Photo smartphone 1 URL</label>
+            <input type="text" class="form-control" id="photo4" name="photo4">
+        </div>
+        <div class="mb-3">
+            <label for="photo5" class="form-label text-white">Photo smartphone 2 URL</label>
+            <input type="text" class="form-control" id="photo5" name="photo5">
+        </div>
+        <div class="mb-3">
+            <label for="photo6" class="form-label text-white">Photo smartphone 3 URL</label>
+            <input type="text" class="form-control" id="photo6" name="photo6">
         </div>
         <button type="submit" class="btn btn-primary">Add Project</button>
     </form>
