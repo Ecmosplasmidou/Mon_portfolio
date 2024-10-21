@@ -17,7 +17,7 @@ BEGIN
         stack varchar(255) DEFAULT NULL,
         carousel_photos jsonb DEFAULT NULL,
         carousel_photos_smartphone jsonb DEFAULT NULL,
-        created_at timestamp NOT NULL DEFAULT current_timestamp(),
+        created_at timestamp NOT NULL DEFAULT current_timestamp,
         instagram varchar(255) DEFAULT NULL,
         cms varchar(255) DEFAULT NULL
     );
