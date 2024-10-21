@@ -25,8 +25,12 @@ if (isset($_GET['id'])) {
         <div class='container text-white mt-4'>
             <h1 class='text-center my-5 fade-in'>{$project['title']}</h1>
             <div class='mb-4 mt-5 fade-in'>
-                <h5>Date : {$project['project_date']}</h5>
-                <h5>Stack : {$project['stack']}</h5>
+                <h5 class='mb-5'>Date : {$project['project_date']}</h5>
+                <h5 class='mb-5'>Stack : {$project['stack']}</h5>";
+        if (!empty($project['cms'])) {
+            echo "<h5 class='mb-5'>Cms : {$project['cms']}</h5>";
+        }
+            echo"
             </div>
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
@@ -50,10 +54,24 @@ if (isset($_GET['id'])) {
                 </a>
             </div>
             <div class='mt-5 fade-in'>
-                <p>{$project['description']}</p>
-                <a href='{$project['lien']}' class='btn btn-primary' target='_blank'>Link to site</a>
-                <a href='{$project['github']}' class='btn btn-secondary' target='_blank'>Link to GitHub</a>
-        </div>";
+            <p>{$project['description']}</p>";
+            if (!empty($project['lien'])) {
+                echo "<a href='{$project['lien']}' class='btn btn-primary mr-1' target='_blank'>Link to site</a>";
+            }
+
+            // Afficher le lien GitHub s'il existe
+            if (!empty($project['github'])) {
+                echo "<a href='{$project['github']}' class='btn btn-secondary mr-1' target='_blank'>Link to GitHub</a>";
+            }
+
+            // Afficher le lien GitHub s'il existe
+            if (!empty($project['instagram'])) {
+                echo "<a href='{$project['instagram']}' class='btn btn-info mr-1' target='_blank'>Instagram</a>";
+            }
+
+            echo "
+                </div>
+            </div>";
     } else {
         echo "<div class='container text-white mt-4'><h1 class='text-center my-5 fade-in'>Projet non trouvé</h1></div>";
     }

@@ -12,7 +12,6 @@ try
 
     if (file_exists($sqlPath)){
         $sql = file_get_contents($sqlPath);
-
         if(!empty($sql)){
             $pdo->exec($sql);
         }

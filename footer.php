@@ -1,9 +1,9 @@
 <footer class="fade-in-f mt-auto">
             <?php
-                $currentPage = basename($_SERVER['PHP_SELF']);
-                $waveContainerClass = ($currentPage == 'home.php') ? 'text-center p-3 text-white' : 'text-center p-3 text-white mt-5';
+                // $currentPage = basename($_SERVER['PHP_SELF']);
+                // $waveContainerClass = ($currentPage == 'home.php') ? 'text-center p-3 text-white' : 'text-center p-3 text-white mt-5';
             ?>
-            <div class="<?php echo $waveContainerClass; ?>">
+            <div class="text-center p-3 text-white mt-5">
                 &copy; <?php echo date("Y"); ?> EcmosDev. Tous droits réservés.
             </div>
         </footer>
