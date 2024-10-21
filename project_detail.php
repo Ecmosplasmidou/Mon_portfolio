@@ -13,6 +13,7 @@ if (isset($_GET['id'])) {
     if ($project) {
         // Décoder les URLs des photos stockées dans la colonne carousel_photos
         $carousel_photos = json_decode($project['carousel_photos'], true);
+        $carousel_photos_smartphone = json_decode($project['carousel_photos_smartphone'], true);
 
         // Vérifiez si $carousel_photos est un tableau et contient les indices nécessaires
         $photo1 = isset($carousel_photos[0]) ? htmlspecialchars($carousel_photos[0]) : '';
@@ -38,13 +39,13 @@ if (isset($_GET['id'])) {
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
                     <div class='carousel-item active'>
-                        <img src='$photo4' srcset='$photo1 600w, $photo4 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 1'>
+                        <img src='$photo1' srcset='$photo4 450w, $photo1 451w' sizes='(max-width: 450px) 100vw, 600px' class='d-block w-100' alt='Photo 1'>
                     </div>
                     <div class='carousel-item'>
-                        <img src='$photo2' srcset='$photo2 600w, $photo5 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 2'>
+                        <img src='$photo2' srcset='$photo5 450w, $photo2 451w' sizes='(max-width: 450px) 100vw, 600px' class='d-block w-100' alt='Photo 2'>
                     </div>
                     <div class='carousel-item'>
-                        <img src='$photo3' srcset='$photo3 600w, $photo6 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 3'>
+                        <img src='$photo3' srcset='$photo6 450w, $photo3 451w' sizes='(max-width: 450px) 100vw, 600px' class='d-block w-100' alt='Photo 3'>
                     </div>
                 </div>
                 <a class='carousel-control-prev' href='#projectCarousel' role='button' data-slide='prev'>
