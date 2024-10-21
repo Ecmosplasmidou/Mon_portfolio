@@ -114,6 +114,6 @@ z-index: -1;
 
 @media (max-width: 576px) {
     .navbar-brand-1 {
-        margin-left: -100px; /* Ajustez cette valeur selon vos besoins */
+        margin-left: -30px; /* Ajustez cette valeur selon vos besoins */
     }
 }
