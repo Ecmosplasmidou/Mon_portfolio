@@ -38,25 +38,27 @@ if (isset($_GET['id'])) {
             </div>
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
+                    <!-- Image 1 -->
                     <div class='carousel-item active'>
                         <picture>
-                            <source media='(max-width: 450px)' srcset='$photo4'>
-                            <source media='(min-width: 451px)' srcset='$photo1'>
-                            <img src='$photo1' class='d-block w-100' alt='Photo 1'>
+                            <!-- Image pour grand écran -->
+                            <source media='(min-width: 768px)' srcset='$photo1'>
+                            <!-- Image pour petit écran -->
+                            <img src='$photo4' class='d-block w-100' alt='Image 1'>
                         </picture>
                     </div>
+                    <!-- Image 2 -->
                     <div class='carousel-item'>
                         <picture>
-                            <source media='(max-width: 450px)' srcset='$photo5'>
-                            <source media='(min-width: 451px)' srcset='$photo2'>
-                            <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                            <source media='(min-width: 768px)' srcset='$photo2'>
+                            <img src='$photo5' class='d-block w-100' alt='Image 2'>
                         </picture>
                     </div>
+                    <!-- Image 3 -->
                     <div class='carousel-item'>
                         <picture>
-                            <source media='(max-width: 450px)' srcset='$photo6'>
-                            <source media='(min-width: 451px)' srcset='$photo3'>
-                            <img src='$photo3' class='d-block w-100' alt='Photo 3'>
+                            <source media='(min-width: 768px)' srcset='$photo3'>
+                            <img src='$photo6' class='d-block w-100' alt='Image 3'>
                         </picture>
                     </div>
                 </div>
