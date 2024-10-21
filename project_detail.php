@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
                     <div class='carousel-item d-none d-md-block'>
                         <img src='$photo3' class='d-block w-100' alt='Photo 3'>
                     </div>
-                    <div class='carousel-item active d-block d-md-none'>
+                    <div class='carousel-item d-block d-md-none'>
                         <img src='$photo4' class='d-block w-100' alt='Photo 4'>
                     </div>
                     <div class='carousel-item d-block d-md-none'>
