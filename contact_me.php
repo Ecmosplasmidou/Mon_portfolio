@@ -25,13 +25,5 @@ include 'header.php';
         </div>
     </div>
 </div>
-
-<!-- Inclure CKEditor -->
-<script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
-<script>
-    // Initialiser CKEditor sur le textarea
-    CKEDITOR.replace('message');
-</script>
-
 <?php include 'footer.php'; ?>
 </html>
