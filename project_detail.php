@@ -36,29 +36,17 @@ if (isset($_GET['id'])) {
             echo"
             </div>
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
-            <div class='carousel-inner'>
-                <div class='carousel-item active'>
-                    <img src='$photo1' 
-                        srcset='$photo4 450w, $photo1 451w' 
-                        sizes='(max-width: 450px) 100vw, 600px' 
-                        class='d-block w-100' 
-                        alt='Photo 1'>
+                <div class='carousel-inner'>
+                    <div class='carousel-item active'>
+                        <img src='$photo4' srcset='$photo1 600w, $photo4 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 1'>
+                    </div>
+                    <div class='carousel-item'>
+                        <img src='$photo2' srcset='$photo2 600w, $photo5 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 2'>
+                    </div>
+                    <div class='carousel-item'>
+                        <img src='$photo3' srcset='$photo3 600w, $photo6 300w' sizes='(max-width: 600px) 300px, 600px' class='d-block w-100' alt='Photo 3'>
+                    </div>
                 </div>
-                <div class='carousel-item'>
-                    <img src='$photo2' 
-                        srcset='$photo5 450w, $photo2 451w' 
-                        sizes='(max-width: 450px) 100vw, 600px' 
-                        class='d-block w-100' 
-                        alt='Photo 2'>
-                </div>
-                <div class='carousel-item'>
-                    <img src='$photo3' 
-                        srcset='$photo6 450w, $photo3 451w' 
-                        sizes='(max-width: 450px) 100vw, 600px' 
-                        class='d-block w-100' 
-                        alt='Photo 3'>
-                </div>
-            </div>
                 <a class='carousel-control-prev' href='#projectCarousel' role='button' data-slide='prev'>
                     <span class='carousel-control-prev-icon' aria-hidden='true'></span>
                     <span class='sr-only'>Previous</span>
