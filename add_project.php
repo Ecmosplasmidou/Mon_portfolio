@@ -34,54 +34,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'header.php'; ?>
 <div class="container mt-5">
-    <h1 class="text-center">Add New Project</h1>
+    <h1 class="text-center text-white">Add New Project</h1>
     <form method="post">
         <div class="mb-3">
-            <label for="title" class="form-label">Project Title</label>
+            <label for="title" class="form-label text-white">Project Title</label>
             <input type="text" class="form-control" id="title" name="title" required>
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">Project Description</label>
+            <label for="description" class="form-label text-white">Project Description</label>
             <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Image URL</label>
+            <label for="image" class="form-label text-white">Image URL</label>
             <input type="text" class="form-control" id="image" name="image" required>
         </div>
         <div class="mb-3">
-            <label for="lien_projet" class="form-label">Lien du projet</label>
+            <label for="lien_projet" class="form-label text-white">Lien du projet</label>
             <input type="text" class="form-control" id="lien_projet" name="lien_projet">
         </div>
         <div class="mb-3">
-            <label for="lien_git" class="form-label">Lien GitHub</label>
+            <label for="lien_git" class="form-label text-white">Lien GitHub</label>
             <input type="text" class="form-control" id="lien_git" name="lien_git">
         </div>
         <div class="mb-3">
-            <label for="instagram" class="form-label">Instagram</label>
+            <label for="instagram" class="form-label text-white">Instagram</label>
             <input type="text" class="form-control" id="instagram" name="instagram">
         </div>
         <div class="mb-3">
-            <label for="cms" class="form-label">CMS</label>
+            <label for="cms" class="form-label text-white">CMS</label>
             <input type="text" class="form-control" id="cms" name="cms">
         </div>
         <div class="mb-3">
-            <label for="project_date" class="form-label">Date de création</label>
+            <label for="project_date" class="form-label text-white">Date de création</label>
             <input type="date" class="form-control" id="project_date" name="project_date" required>
         </div>
         <div class="mb-3">
-            <label for="stack" class="form-label">Stack</label>
+            <label for="stack" class="form-label text-white">Stack</label>
             <input type="text" class="form-control" id="stack" name="stack" required>
         </div>
         <div class="mb-3">
-            <label for="photo1" class="form-label">Photo 1 URL</label>
+            <label for="photo1" class="form-label text-white">Photo 1 URL</label>
             <input type="text" class="form-control" id="photo1" name="photo1">
         </div>
         <div class="mb-3">
-            <label for="photo2" class="form-label">Photo 2 URL</label>
+            <label for="photo2" class="form-label text-white">Photo 2 URL</label>
             <input type="text" class="form-control" id="photo2" name="photo2">
         </div>
         <div class="mb-3">
-            <label for="photo3" class="form-label">Photo 3 URL</label>
+            <label for="photo3" class="form-label text-white">Photo 3 URL</label>
             <input type="text" class="form-control" id="photo3" name="photo3">
         </div>
         <button type="submit" class="btn btn-primary">Add Project</button>
