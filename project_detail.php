@@ -13,6 +13,7 @@ if (isset($_GET['id'])) {
     if ($project) {
         // Décoder les URLs des photos stockées dans la colonne carousel_photos
         $carousel_photos = json_decode($project['carousel_photos'], true);
+        $carousel_photos_smartphone = json_decode($project['carousel_photos_smartphone'], true);
         
 
         // Vérifiez si $carousel_photos est un tableau et contient les indices nécessaires
@@ -41,19 +42,19 @@ if (isset($_GET['id'])) {
                     <div class='carousel-item active d-none d-md-block'>
                         <img src='$photo1' class='d-block w-100' alt='Photo 1'>
                     </div>
-                    <div class='carousel-item active d-none d-md-block'>
+                    <div class='carousel-item d-none d-md-block'>
                         <img src='$photo2' class='d-block w-100' alt='Photo 2'>
                     </div>
-                    <div class='carousel-item active d-none d-md-block'>
+                    <div class='carousel-item d-none d-md-block'>
                         <img src='$photo3' class='d-block w-100' alt='Photo 3'>
                     </div>
                     <div class='carousel-item active d-block d-md-none'>
                         <img src='$photo4' class='d-block w-100' alt='Photo 4'>
                     </div>
-                    <div class='carousel-item active d-block d-md-none'>
+                    <div class='carousel-item d-block d-md-none'>
                         <img src='$photo5' class='d-block w-100' alt='Photo 5'>
                     </div>
-                    <div class='carousel-item active d-block d-md-none'>
+                    <div class='carousel-item d-block d-md-none'>
                         <img src='$photo6' class='d-block w-100' alt='Photo 6'>
                     </div>
                 </div>
