@@ -27,7 +27,7 @@ include 'header.php';
 </div>
 
 <!-- Inclure CKEditor -->
-<script src="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.js"></script>
+<script src="//cdn.ckeditor.com/4.25.0-lts/basic/ckeditor.js"></script>
 <script>
     // Initialiser CKEditor sur le textarea
     CKEDITOR.replace('message');

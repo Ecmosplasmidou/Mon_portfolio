@@ -89,5 +89,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <?php include 'footer.php'; ?>
+
+<!-- Inclure CKEditor -->
+<script src="//cdn.ckeditor.com/4.25.0-lts/basic/ckeditor.js"></script>
+<script>
+    // Initialiser CKEditor sur le textarea
+    CKEDITOR.replace('description');
+</script>
 </body>
 </html>
