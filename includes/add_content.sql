@@ -8,7 +8,7 @@ CREATE TABLE projects (
   project_date date DEFAULT NULL,
   stack varchar(255) DEFAULT NULL,
   carousel_photos jsonb DEFAULT NULL,
-  created_at timestamp NOT NULL DEFAULT current_timestamp(),
+  created_at timestamp NOT NULL DEFAULT current_timestamp,
   instagram varchar(255) DEFAULT NULL,
   cms varchar(255) DEFAULT NULL
 );
@@ -22,7 +22,7 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
-  created_at timestamp NOT NULL DEFAULT current_timestamp(),
+  created_at timestamp NOT NULL DEFAULT current_timestamp,
   UNIQUE(username)
 );
 
