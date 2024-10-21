@@ -30,9 +30,10 @@ try {
     $db_name = 'd39j272s4ua1vu';
     $db_user = 'u58c0djr6rdj1d';
     $db_password = 'p2834fc8f9e453c8ac5508708edbc4813d11da793036f600d84543005b1668364';
+    $db_port = '5432';
 
     // Créer une nouvelle connexion PDO
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", 
+    $pdo = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8", 
         $db_user, 
         $db_password,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
