@@ -109,7 +109,7 @@ include 'footer.php';
 ?>
 
 <!-- Inclure CKEditor -->
-<script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.js"></script>
 <script>
     // Initialiser CKEditor sur le textarea
     CKEDITOR.replace('description');

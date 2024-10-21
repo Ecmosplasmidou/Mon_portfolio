@@ -7,6 +7,7 @@
     <title>EcmosDev</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" sizes="192x192" href="images/favicon.png" type="image/png">
 </head>
