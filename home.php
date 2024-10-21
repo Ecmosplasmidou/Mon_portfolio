@@ -2,7 +2,7 @@
         <div class="wave"></div>
         <div class="container text-white mt-4">
             <div class="row">
-                <div class="col-md-6 fade-in mt-4">
+                <div class="col-md-6 fade-in mt-4 card-body text-sm-center text-md-left">
                     <h2>Welcome Visitor</h2>
                     <p>
                         My name is Cassam MAHADAWOO, I'm a full-stack developer based in Toulouse, FR. I have developed many types of front-ends from well known Works applications to Ecommerce shops.<br>

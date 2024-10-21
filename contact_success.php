@@ -3,7 +3,7 @@ include 'header.php';
 ?>
 
 <div class="wave"></div>
-<div class="container text-white mt-4">
+<div class="container text-white mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-info text-white shadow-lg">

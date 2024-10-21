@@ -17,7 +17,7 @@ left: 0;
 width: 100%;
 height: 100vh; /* Fixé à la hauteur de la vue pour couvrir l'écran */
 overflow: hidden;
-z-index: 0;
+z-index: -1;
 }
 
 .wave-container-other {
@@ -103,4 +103,11 @@ z-index: 0;
     to {
         opacity: 1;
     }
+}
+
+.card-body {
+    min-height: 140px; /* Ajustez cette valeur selon vos besoins */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
