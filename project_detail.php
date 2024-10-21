@@ -14,7 +14,6 @@ if (isset($_GET['id'])) {
         // Décoder les URLs des photos stockées dans la colonne carousel_photos
         $carousel_photos = json_decode($project['carousel_photos'], true);
         $carousel_photos_smartphone = json_decode($project['carousel_photos_smartphone'], true);
-        
 
         // Vérifiez si $carousel_photos est un tableau et contient les indices nécessaires
         $photo1 = isset($carousel_photos[0]) ? htmlspecialchars($carousel_photos[0]) : '';
@@ -39,23 +38,26 @@ if (isset($_GET['id'])) {
             </div>
             <div id='projectCarousel' class='carousel slide fade-in' data-ride='carousel'>
                 <div class='carousel-inner'>
-                    <div class='carousel-item active d-none d-md-block'>
-                        <img src='$photo1' class='d-block w-100' alt='Photo 1'>
+                    <div class='carousel-item active'>
+                        <picture>
+                            <source media='(max-width: 450px)' srcset='$photo4'>
+                            <source media='(min-width: 451px)' srcset='$photo1'>
+                            <img src='$photo1' class='d-block w-100' alt='Photo 1'>
+                        </picture>
                     </div>
-                    <div class='carousel-item d-none d-md-block'>
-                        <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                    <div class='carousel-item'>
+                        <picture>
+                            <source media='(max-width: 450px)' srcset='$photo5'>
+                            <source media='(min-width: 451px)' srcset='$photo2'>
+                            <img src='$photo2' class='d-block w-100' alt='Photo 2'>
+                        </picture>
                     </div>
-                    <div class='carousel-item d-none d-md-block'>
-                        <img src='$photo3' class='d-block w-100' alt='Photo 3'>
-                    </div>
-                    <div class='carousel-item d-block d-md-none'>
-                        <img src='$photo4' class='d-block w-100' alt='Photo 4'>
-                    </div>
-                    <div class='carousel-item d-block d-md-none'>
-                        <img src='$photo5' class='d-block w-100' alt='Photo 5'>
-                    </div>
-                    <div class='carousel-item d-block d-md-none'>
-                        <img src='$photo6' class='d-block w-100' alt='Photo 6'>
+                    <div class='carousel-item'>
+                        <picture>
+                            <source media='(max-width: 450px)' srcset='$photo6'>
+                            <source media='(min-width: 451px)' srcset='$photo3'>
+                            <img src='$photo3' class='d-block w-100' alt='Photo 3'>
+                        </picture>
                     </div>
                 </div>
                 <a class='carousel-control-prev' href='#projectCarousel' role='button' data-slide='prev'>
@@ -78,7 +80,7 @@ if (isset($_GET['id'])) {
                 echo "<a href='{$project['github']}' class='btn btn-secondary mr-1' target='_blank'>Link to GitHub</a>";
             }
 
-            // Afficher le lien GitHub s'il existe
+            // Afficher le lien Instagram s'il existe
             if (!empty($project['instagram'])) {
                 echo "<a href='{$project['instagram']}' class='btn btn-info mr-1' target='_blank'>Instagram</a>";
             }
@@ -95,7 +97,3 @@ if (isset($_GET['id'])) {
 
 include 'footer.php';
 ?>
-
-
-
-
