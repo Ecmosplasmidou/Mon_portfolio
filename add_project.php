@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'header.php'; ?>
 <div class="container mt-5">
-    <h1 class="text-center">Add New Project</h1>
+    <h1 class="text-center text-white">Add New Project</h1>
     <form method="post">
         <div class="mb-3">
             <label for="title" class="form-label text-white">Project Title</label>
