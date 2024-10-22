@@ -53,7 +53,7 @@
                             <a class="nav-link text-white" href="contact_me.php">Contact-me</a>
                         </li>
                         <div class="d-flex align-items-center">
-                            <li class="nav-item">
+                            <li class="nav-item mr-sm-1">
                                 <a class="nav-link text-white" href="https://github.com/Ecmosplasmidou" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
