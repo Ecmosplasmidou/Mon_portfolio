@@ -52,14 +52,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="contact_me.php">Contact-me</a>
                         </li>
-                        <div class="ml-auto ">
+                        <div class="d-flex align-items-center">
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="https://github.com/Ecmosplasmidou" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="www.linkedin.com/in/cassam-mahadawoo-b72612176" target="_blank">
+                                <a class="nav-link text-white" href="https://www.linkedin.com/in/cassam-mahadawoo-b72612176/" target="_blank">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </li>
