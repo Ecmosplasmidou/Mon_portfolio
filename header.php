@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" sizes="192x192" href="images/favicon.png" type="image/png">
 </head>
@@ -50,6 +51,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="contact_me.php">Contact-me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://github.com/your-github-username" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://www.linkedin.com/in/your-linkedin-username" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
