@@ -117,3 +117,10 @@ z-index: -1;
         margin-left: -45px; /* Ajustez cette valeur selon vos besoins */
     }
 }
+
+
+@media (max-width: 991px) {
+    .mr-1-sm {
+        margin-right: 0.25rem; /* Ajustez cette valeur selon vos besoins */
+    }
+}
