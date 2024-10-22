@@ -52,16 +52,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="contact_me.php">Contact-me</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="https://github.com/your-github-username" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="https://www.linkedin.com/in/your-linkedin-username" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </li>
+                        <div class="d-flex align-items-center ml-auto ">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://github.com/Ecmosplasmidou" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="www.linkedin.com/in/cassam-mahadawoo-b72612176" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </nav>
