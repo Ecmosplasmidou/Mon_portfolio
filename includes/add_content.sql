@@ -41,3 +41,7 @@ BEGIN
         UNIQUE(username)
     );
 END $$;
+
+-- -- Insertion des données dans la table users
+INSERT INTO users (username, password, created_at) VALUES 
+('admin', '$2y$10$6EVcPOcbzdR61Mu.SVvG3umptdl6aMSJ1GKuwkS/ruCPwA5msF0Yu', '2024-10-21 09:23:24');
