@@ -40,7 +40,7 @@ try {
     );
     
     // Chemin vers le fichier SQL
-    $sqlPath = __DIR__ . '/add_content.sql';
+    $sqlPath = __DIR__ . 'add_content.sql';
 
     // Vérifier si le fichier SQL existe
     if (file_exists($sqlPath)) {

@@ -5,17 +5,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Vérification de la connexion à la base de données
-try {
-    $pdo = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name", 
-        $db_user, 
-        $db_password,
-        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-    );
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
     $description = htmlspecialchars($_POST['description']);
@@ -42,12 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Préparez et exécutez la requête d'insertion
     try {
         $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, instagram, cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $result = $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms]);
         
-        $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms]);
-
-        echo "Insertion réussie !<br>";
-        header('Location: admin.php');
-        exit;
+        if ($result) {
+            echo "Insertion réussie !<br>";
+            header('Location: admin.php');
+            exit;
+        }else {
+            echo "Erreur lors de l'insertion.<br>";
+        }
     } catch (PDOException $e) {
         echo 'Erreur SQL : ' . $e->getMessage();
     }
