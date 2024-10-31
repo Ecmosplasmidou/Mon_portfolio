@@ -5,6 +5,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Vérification de la connexion à la base de données
+try {
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
@@ -16,16 +23,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cms = isset($_POST['cms']) ? htmlspecialchars($_POST['cms']) : null;
     $project_date = htmlspecialchars($_POST['project_date']);
     $stack = htmlspecialchars($_POST['stack']);
-    $carousel_photos = json_encode([$_POST['photo1'], $_POST['photo2'], $_POST['photo3']]);
-    $carousel_photos_smartphone = json_encode([$_POST['photo4'], $_POST['photo5'], $_POST['photo6']]);
+    
+    // Rassemblement des photos en JSON
+    $carousel_photos = json_encode([
+        $_POST['photo1'] ?: null,
+        $_POST['photo2'] ?: null,
+        $_POST['photo3'] ?: null,
+    ]);
+    $carousel_photos_smartphone = json_encode([
+        $_POST['photo4'] ?: null,
+        $_POST['photo5'] ?: null,
+        $_POST['photo6'] ?: null,
+    ]);
 
     // Préparez et exécutez la requête d'insertion
     try {
-        echo "Préparation de la requête SQL<br>";
-
-        $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, instagram, cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');$stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, instagram, cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, instagram, cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         
-        echo "Exécution de la requête<br>";
         $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms]);
 
         echo "Insertion réussie !<br>";
