@@ -39,6 +39,8 @@ try {
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
 
+    echo "Connexion réussie à la base de données PostgreSQL.";
+    
     // Chemin vers le fichier SQL
     $sqlPath = __DIR__ . '/add_content.sql';
 

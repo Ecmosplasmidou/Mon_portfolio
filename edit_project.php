@@ -25,16 +25,20 @@ if (isset($_GET['id'])) {
             $cms = htmlspecialchars($_POST['cms']);
 
             // Préparez et exécutez la requête de mise à jour
-            $updateStmt = $pdo->prepare('UPDATE projects SET title = ?, description = ?, image = ?, lien = ?, github = ?, project_date = ?, stack = ?, carousel_photos = ?, carousel_photos_smartphone = ?, instagram = ?, cms = ? WHERE id = ?');
-            $updateStmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms, $projectId]);
-
-            // Redirigez vers la page de détails du projet après la mise à jour
-            header('Location: project_detail.php?id=' . $projectId);
-            exit;
+            try {
+                $updateStmt = $pdo->prepare('UPDATE projects SET title = ?, description = ?, image = ?, lien = ?, github = ?, project_date = ?, stack = ?, carousel_photos = ?, carousel_photos_smartphone = ?, instagram = ?, cms = ? WHERE id = ?');
+                $updateStmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms, $projectId]);
+                // Redirigez vers la page de détails du projet après la mise à jour
+                header('Location: project_detail.php?id=' . $projectId);
+                exit;
+            } catch (PDOException $e) {
+                echo 'Erreur SQL : ' . $e->getMessage();
+            }
         }
 
         // Affichez le formulaire d'édition du projet
         $carousel_photos = json_decode($project['carousel_photos'], true);
+        $carousel_photos_smartphone = json_decode($project['carousel_photos_smartphone'], true);
         $photo1 = isset($carousel_photos[0]) ? htmlspecialchars($carousel_photos[0]) : '';
         $photo2 = isset($carousel_photos[1]) ? htmlspecialchars($carousel_photos[1]) : '';
         $photo3 = isset($carousel_photos[2]) ? htmlspecialchars($carousel_photos[2]) : '';
@@ -62,15 +66,15 @@ if (isset($_GET['id'])) {
                             <input type='text' class='form-control' id='image' name='image' value='" . htmlspecialchars($project['image'], ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
-                            <label for='lien_projet' class='form-label text-white'>Lien du projet</label>
+                            <label for='lien_projet' class='form-label text-white'>Project Link</label>
                             <input type='text' class='form-control' id='lien_projet' name='lien_projet' value='" . htmlspecialchars($project['lien'], ENT_QUOTES, 'UTF-8') . "'>
                         </div>
                         <div class='mb-3'>
-                            <label for='lien_git' class='form-label text-white'>Lien GitHub</label>
+                            <label for='lien_git' class='form-label text-white'>GitHub Link</label>
                             <input type='text' class='form-control' id='lien_git' name='lien_git' value='" . htmlspecialchars($project['github'], ENT_QUOTES, 'UTF-8') . "'>
                         </div>
                         <div class='mb-3'>
-                            <label for='project_date' class='form-label text-white'>Date de création</label>
+                            <label for='project_date' class='form-label text-white'>Creation Date</label>
                             <input type='date' class='form-control' id='project_date' name='project_date' value='" . htmlspecialchars($project['project_date'], ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
@@ -90,15 +94,15 @@ if (isset($_GET['id'])) {
                             <input type='text' class='form-control' id='photo3' name='photo3' value='" . htmlspecialchars($photo3, ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
-                            <label for='photo4' class='form-label text-white'>Photo smartphone 1 URL</label>
+                            <label for='photo4' class='form-label text-white'>Smartphone Photo 1 URL</label>
                             <input type='text' class='form-control' id='photo4' name='photo4' value='" . htmlspecialchars($photo4, ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
-                            <label for='photo5' class='form-label text-white'>Photo smartphone 2 URL</label>
+                            <label for='photo5' class='form-label text-white'>Smartphone Photo 2 URL</label>
                             <input type='text' class='form-control' id='photo5' name='photo5' value='" . htmlspecialchars($photo5, ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
-                            <label for='photo6' class='form-label text-white'>Photo smartphone 3 URL</label>
+                            <label for='photo6' class='form-label text-white'>Smartphone Photo 3 URL</label>
                             <input type='text' class='form-control' id='photo6' name='photo6' value='" . htmlspecialchars($photo6, ENT_QUOTES, 'UTF-8') . "' required>
                         </div>
                         <div class='mb-3'>
@@ -115,10 +119,10 @@ if (isset($_GET['id'])) {
             </div>
         </div>";
     } else {
-        echo "<div class='container text-white mt-4'><h1 class='text-center my-5'>Projet non trouvé</h1></div>";
+        echo "<div class='container text-white mt-4'><h1 class='text-center my-5'>Project not found</h1></div>";
     }
 } else {
-    echo "<div class='container text-white mt-4'><h1 class='text-center my-5'>Aucun projet spécifié</h1></div>";
+    echo "<div class='container text-white mt-4'><h1 class='text-center my-5'>No project specified</h1></div>";
 }
 
 include 'footer.php';
