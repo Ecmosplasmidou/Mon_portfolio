@@ -4,7 +4,7 @@
                 // $waveContainerClass = ($currentPage == 'home.php') ? 'text-center p-3 text-white' : 'text-center p-3 text-white mt-5';
             ?>
             <div class="text-center p-3 text-white mt-5">
-                &copy; <?php echo date("Y"); ?> EcmosDev. Tous droits réservés.
+                &copy; <?php echo date("Y"); ?> EcmosDev. All rights reserved.
             </div>
         </footer>
     </div>

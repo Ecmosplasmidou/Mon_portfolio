@@ -16,7 +16,7 @@ include 'header.php';
                             <img src='{$row['image']}' class='card-img-top text-dark' alt='{$row['title']}'>
                             <div class='card-body'>
                                 <h5 class='card-title text-dark'>{$row['title']}</h5>
-                                <a href='project_detail.php?id={$row['id']}' class='btn btn-primary'>Voir le projet</a>
+                                <a href='project_detail.php?id={$row['id']}' class='btn btn-primary'>View Project</a>
                             </div>
                         </div>
                     </div>";
