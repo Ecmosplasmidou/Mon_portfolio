@@ -3,7 +3,7 @@ include 'includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
-    $description = $_POST['description']);
+    $description = $_POST(['description']);
     $image = htmlspecialchars($_POST['image']);
     $lien_projet = isset($_POST['lien_projet']) ? htmlspecialchars($_POST['lien_projet']) : null;
     $lien_git = isset($_POST['lien_git']) ? htmlspecialchars($_POST['lien_git']) : null;
