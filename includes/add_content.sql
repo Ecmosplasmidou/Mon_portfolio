@@ -23,9 +23,6 @@ BEGIN
     );
 END $$;
 
-SELECT setval('projects_id_seq', (SELECT COALESCE(MAX(id), 0) FROM projects));
-
--- -- Insertion des données dans la table projects
 -- Insertion des données dans la table projects
 INSERT INTO projects (
     title, 
@@ -51,9 +48,9 @@ INSERT INTO projects (
     'Python/Django/JS/Bootstrap', 
     '["images/jo_image_1.png", "images/jo_image_2.png", "images/jo_image_3.png"]', 
     '["images/jo_image_smartphone_1.png", "images/jo_image_smartphone_2.png", "images/jo_image_smartphone_3.png"]', 
-    CURRENT_TIMESTAMP,  -- Utilisez CURRENT_TIMESTAMP pour la date actuelle
-    '',  -- Instagram
-    ''   -- CMS
+    CURRENT_TIMESTAMP, 
+    '', 
+    ''
 ),
 (
     'Trendy-Paris', 
@@ -65,7 +62,7 @@ INSERT INTO projects (
     'HTML/CSS/JavaScript', 
     '["images/TP.jpg", "images/TP_1.jpg", "images/TP_2.jpg"]', 
     '[]', 
-    CURRENT_TIMESTAMP,  -- Utilisez CURRENT_TIMESTAMP
+    CURRENT_TIMESTAMP,  
     'https://www.instagram.com/trendypofficiel/', 
     'SHOPIFY'
 ),
@@ -79,10 +76,17 @@ INSERT INTO projects (
     'HTML/CSS/JavaScript', 
     '["images/ecmosgotchi.png", "images/ecmosgotchi_2.png", "images/ecmosgotchi_3.png"]', 
     '["images/ecmosgotchi_smartphone.png","images/ecmosgotchi_smartphone_1.png","images/ecmosgotchi_smartphone_2.png"]', 
-    CURRENT_TIMESTAMP,  -- Utilisez CURRENT_TIMESTAMP
-    '',  -- Instagram
-    ''   -- CMS
+    CURRENT_TIMESTAMP,  
+    '',  
+    ''
 );
+
+-- Réinitialisation de la séquence pour les ids
+SELECT setval('projects_id_seq', COALESCE((SELECT MAX(id) FROM projects), 1));
+
+-- Vérifiez et créez la table users
+DO $$ 
+BEGIN
 
 
 
