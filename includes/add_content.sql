@@ -23,13 +23,69 @@ BEGIN
     );
 END $$;
 
--- -- Insertion des données dans la table projects
-INSERT INTO projects (id, title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, created_at, instagram, cms) VALUES 
-('Olympic Ticket Hub', '<p><strong>&quot;Olympic Ticket Hub&quot;</strong> is a Django-based site for buying tickets to the 2024 Olympics. Users can view events, select tickets, and pay securely online. Admin features include sales tracking and ticket management, showcasing web dev skills.', 'images/athlete-feminine.jpg', 'https://jo-ticketing-site-e53a4a320f9f.herokuapp.com/', 'https://github.com/Ecmosplasmidou/site_jo_finale.git', '2024-10-01', 'Python/Django/JS/Bootstrap', '["images/jo_image_1.png", "images/jo_image_2.png", "images/jo_image_3.png"]', '["images/jo_image_smartphone_1.png", "images/jo_image_smartphone_2.png", "images/jo_image_smartphone_3.png"]', '2024-10-20 18:17:15', '', ''),
-('Trendy-Paris', '<p><strong>Dont be original, be unique!</strong></p>', 'images/trendy-paris.png', '', '', '2021-10-13', 'HTML/CSS/JavaScript', '["images/TP.jpg", "images/TP_1.jpg", "images/TP_2.jpg"]', '[]', '2024-10-21 09:43:16', 'https://www.instagram.com/trendypofficiel/', 'SHOPIFY'),
-('Ecmosgotchi', '<p><strong>Come to play with teh ecmosgotchi her:</strong></p>', 'images/ecmosgotchi_acceuil.png', 'https://ecmosgotchi-tamagotchi-by-ecmosdev.netlify.app/', '', '2024-03-13', 'HTML/CSS/JavaScript', '["images/ecmosgotchi.png", "images/ecmosgotchi_2.png", "images/ecmosgotchi_3.png"]', '["images/ecmosgotchi_smartphone.png","images/ecmosgotchi_smartphone_1.png","images/ecmosgotchi_smartphone_2.png"]', '2024-10-21 11:58:21', '', '');
-
 SELECT setval('projects_id_seq', (SELECT COALESCE(MAX(id), 0) FROM projects));
+
+-- -- Insertion des données dans la table projects
+-- Insertion des données dans la table projects
+INSERT INTO projects (
+    title, 
+    description, 
+    image, 
+    lien, 
+    github, 
+    project_date, 
+    stack, 
+    carousel_photos, 
+    carousel_photos_smartphone, 
+    created_at, 
+    instagram, 
+    cms
+) VALUES 
+(
+    'Olympic Ticket Hub', 
+    '<p><strong>&quot;Olympic Ticket Hub&quot;</strong> is a Django-based site for buying tickets to the 2024 Olympics. Users can view events, select tickets, and pay securely online. Admin features include sales tracking and ticket management, showcasing web dev skills.', 
+    'images/athlete-feminine.jpg', 
+    'https://jo-ticketing-site-e53a4a320f9f.herokuapp.com/', 
+    'https://github.com/Ecmosplasmidou/site_jo_finale.git', 
+    '2024-10-01', 
+    'Python/Django/JS/Bootstrap', 
+    '["images/jo_image_1.png", "images/jo_image_2.png", "images/jo_image_3.png"]', 
+    '["images/jo_image_smartphone_1.png", "images/jo_image_smartphone_2.png", "images/jo_image_smartphone_3.png"]', 
+    CURRENT_TIMESTAMP,  -- Utilisez CURRENT_TIMESTAMP pour la date actuelle
+    '',  -- Instagram
+    ''   -- CMS
+),
+(
+    'Trendy-Paris', 
+    '<p><strong>Dont be original, be unique!</strong></p>', 
+    'images/trendy-paris.png', 
+    '', 
+    '', 
+    '2021-10-13', 
+    'HTML/CSS/JavaScript', 
+    '["images/TP.jpg", "images/TP_1.jpg", "images/TP_2.jpg"]', 
+    '[]', 
+    CURRENT_TIMESTAMP,  -- Utilisez CURRENT_TIMESTAMP
+    'https://www.instagram.com/trendypofficiel/', 
+    'SHOPIFY'
+),
+(
+    'Ecmosgotchi', 
+    '<p><strong>Come to play with teh ecmosgotchi her:</strong></p>', 
+    'images/ecmosgotchi_acceuil.png', 
+    'https://ecmosgotchi-tamagotchi-by-ecmosdev.netlify.app/', 
+    '', 
+    '2024-03-13', 
+    'HTML/CSS/JavaScript', 
+    '["images/ecmosgotchi.png", "images/ecmosgotchi_2.png", "images/ecmosgotchi_3.png"]', 
+    '["images/ecmosgotchi_smartphone.png","images/ecmosgotchi_smartphone_1.png","images/ecmosgotchi_smartphone_2.png"]', 
+    CURRENT_TIMESTAMP,  -- Utilisez CURRENT_TIMESTAMP
+    '',  -- Instagram
+    ''   -- CMS
+);
+
+
+
 
 
 -- Vérifiez et créez la table users
