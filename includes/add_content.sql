@@ -29,6 +29,8 @@ INSERT INTO projects (id, title, description, image, lien, github, project_date,
 ('Trendy-Paris', '<p><strong>Dont be original, be unique!</strong></p>', 'images/trendy-paris.png', '', '', '2021-10-13', 'HTML/CSS/JavaScript', '["images/TP.jpg", "images/TP_1.jpg", "images/TP_2.jpg"]', '[]', '2024-10-21 09:43:16', 'https://www.instagram.com/trendypofficiel/', 'SHOPIFY'),
 ('Ecmosgotchi', '<p><strong>Come to play with teh ecmosgotchi her:</strong></p>', 'images/ecmosgotchi_acceuil.png', 'https://ecmosgotchi-tamagotchi-by-ecmosdev.netlify.app/', '', '2024-03-13', 'HTML/CSS/JavaScript', '["images/ecmosgotchi.png", "images/ecmosgotchi_2.png", "images/ecmosgotchi_3.png"]', '["images/ecmosgotchi_smartphone.png","images/ecmosgotchi_smartphone_1.png","images/ecmosgotchi_smartphone_2.png"]', '2024-10-21 11:58:21', '', '');
 
+SELECT setval('projects_id_seq', (SELECT COALESCE(MAX(id), 0) FROM projects));
+
 
 -- Vérifiez et créez la table users
 DO $$ 
