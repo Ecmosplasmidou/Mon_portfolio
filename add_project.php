@@ -21,10 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Préparez et exécutez la requête d'insertion
     try {
+        echo "Préparation de la requête SQL<br>";
+
         $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, instagram, cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        
+        echo "Exécution de la requête<br>";
         $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms]);
 
-        echo "Insertion réussie !";
+        echo "Insertion réussie !<br>";
         header('Location: admin.php');
         exit;
     } catch (PDOException $e) {
