@@ -3,7 +3,7 @@ include 'includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
-    $description = htmlspecialchars($_POST['description']);
+    $description = $_POST['description']);
     $image = htmlspecialchars($_POST['image']);
     $lien_projet = isset($_POST['lien_projet']) ? htmlspecialchars($_POST['lien_projet']) : null;
     $lien_git = isset($_POST['lien_git']) ? htmlspecialchars($_POST['lien_git']) : null;
@@ -15,11 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $carousel_photos_smartphone = json_encode([$_POST['photo4'], $_POST['photo5'], $_POST['photo6']]);
 
     // Préparez et exécutez la requête d'insertion
-    $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, instagram, cms, project_date, stack, carousel_photos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-    $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $instagram, $cms, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone]);
+    try {
+        $stmt = $pdo->prepare('INSERT INTO projects (title, description, image, lien, github, project_date, stack, carousel_photos, carousel_photos_smartphone, instagram, cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt->execute([$title, $description, $image, $lien_projet, $lien_git, $project_date, $stack, $carousel_photos, $carousel_photos_smartphone, $instagram, $cms]);
 
-    header('Location: admin.php');
-    exit;
+        header('Location: admin.php');
+        exit;
+    } catch (PDOException $e) {
+        echo 'Erreur SQL : ' . $e->getMessage();
+    }
 }
 ?>
 
