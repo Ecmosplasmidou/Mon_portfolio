@@ -84,11 +84,6 @@ INSERT INTO projects (
 -- Réinitialisation de la séquence pour les ids
 SELECT setval('projects_id_seq', COALESCE((SELECT MAX(id) FROM projects), 1));
 
--- Vérifiez et créez la table users
-DO $$ 
-BEGIN
-
-
 
 
 
