@@ -48,8 +48,6 @@ try {
         if (!empty($sql)) {
             $pdo->exec($sql);
         }
-    } else {
-        echo "Le fichier SQL est introuvable à l'emplacement : $sqlPath";
     }
 } catch (PDOException $e) {
     die('Erreur: ' . $e->getMessage());
